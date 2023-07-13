@@ -1,5 +1,3 @@
-export function Response(){
-    return (
-        <div>coment</div>
-    )
+export default function Response() {
+  return <div>coment</div>;
 }
