@@ -1,4 +1,4 @@
-export function Kitchen(){
+export default function Kitchen(){
     return (
         <div>kitchen</div>
     )

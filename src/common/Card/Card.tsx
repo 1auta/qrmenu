@@ -1,7 +1,7 @@
-import Bar from "./static/bar.png";
-import Bar1 from "./static/bar1.png";
-import Bar2 from "./static/bar2.png";
-import Bar3 from "./static/bar3.png";
+import Bar from "@/app/bar/static/bar.png";
+import Bar1 from "@/app/bar/static/bar1.png";
+import Bar2 from "@/app/bar/static/bar2.png";
+import Bar3 from "@/app/bar/static/bar3.png";
 
 export type Card = {
   image: string;

@@ -7,12 +7,16 @@ export const BurgerMenu: React.FC = () => {
 
   const openNav = () => {
     setIsOpen(true);
-    document.body.classList.add("menu-open");
+    if (typeof document !== "undefined") {
+      document.body.classList.add("menu-open");
+    }
   };
 
   const closeNav = () => {
     setIsOpen(false);
-    document.body.classList.remove("menu-open");
+    if (typeof document !== "undefined") {
+      document.body.classList.remove("menu-open");
+    }
   };
 
   return (

@@ -1,6 +1,11 @@
 import { CardList } from "@/common/CardList"
+import { Metadata } from "next"
 
-export  function Bar(){
+const metadata:Metadata = {
+    title: "bar"
+}
+
+export default function Bar(){
     return (
         <>
         <CardList/>
