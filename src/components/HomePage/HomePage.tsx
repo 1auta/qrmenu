@@ -1,6 +1,7 @@
-'use client'
 import { Hero } from "./Hero/Hero";
 import { SelectMenu } from "./SelectMenu/SelectMenu";
+import { Info } from "./Info/Info";
+
 
 export function HomePage() {
   return (
@@ -8,7 +9,7 @@ export function HomePage() {
     
       <Hero />
         <SelectMenu />
-        
+        <Info/>
     </>
   );
 }
