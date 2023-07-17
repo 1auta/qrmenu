@@ -9,7 +9,7 @@ const metadata: Metadata = {
 export default function Bar() {
   return (
     <>
-      <div className="">
+      <div className="mt-12">
         <button className="border border-gray-300 py-2 px-4 rounded-md shadow-sm bg-gray-50">
           <Link href={"/"} className="flex justify-between">
             <svg
