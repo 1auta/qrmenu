@@ -8,22 +8,22 @@ export function Hero() {
   return (
     <section>
       <Container>
-        <div className="p">
+        <div>
           <div>
-            <p className="text-2xl">Velvet</p>
+            <p className="text-2xl">1auta</p>
             <p className="text-slate-400 text-sm">Кавʼярня</p>
           </div>
-          <div className="text-sm py-5">
+          <div className="text-sm my-2">
             <div className="flex">
-              <Image src={Taco} alt="Taco" width={30} />
+              <Image src={Taco} alt="Taco" width={20} />
               <p className="ml-1 my-auto ">Крафтове меню</p>
             </div>
             <div className="flex">
-              <Image src={BubbleTea} alt="bubbletea" width={30} />
+              <Image src={BubbleTea} alt="bubbletea" width={20} />
               <p className="ml-1 my-auto">Холодні та гарячі напої</p>
             </div>
             <div className="flex">
-              <Image src={Alcohol} alt="Alcohol" width={30} />
+              <Image src={Alcohol} alt="Alcohol" width={20} />
               <p className="ml-1 my-auto">Алкогольні коктелі</p>
             </div>
           </div>

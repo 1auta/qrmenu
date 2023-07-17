@@ -6,7 +6,7 @@ export function SelectMenu() {
   return (
     <section className="bg-gray-50 ">
       <Container>
-        <div className="flex flex-col gap-3 py-3">
+        <div className="flex flex-col gap-3 py-3 justify-end">
           <Button>
             <Link href={"/kitchen"} className="flex justify-between">
               <p>Меню кухні</p>
