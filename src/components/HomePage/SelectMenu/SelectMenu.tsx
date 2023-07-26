@@ -4,9 +4,9 @@ import Link from "next/link";
 
 export function SelectMenu() {
   return (
-    <section className="bg-gray-50 ">
+    <section className="bg-gray-50  ">
       <Container>
-        <div className="flex flex-col gap-3 py-3 justify-end">
+        <div className="flex flex-col gap-3 py-3 lg:">
           <Button>
             <Link href={"/kitchen"} className="flex justify-between">
               <p>Меню кухні</p>
@@ -46,7 +46,7 @@ export function SelectMenu() {
             </Link>
           </Button>
           <Button>
-            <Link href={"/bear"} className="flex justify-between">
+            <Link href={"/desert"} className="flex justify-between">
               <p>Меню десертів</p>
               <svg
                 xmlns="http://www.w3.org/2000/svg"

@@ -1,34 +1,40 @@
-import { CardList } from "@/common/CardList";
-import { Metadata } from "next";
+import { CardList } from "@/common/CardLists/CardListBar";
+import { ButtonBack } from "@/common/ButtonBack";
 import Link from "next/link";
-
-const metadata: Metadata = {
-  title: "bar",
-};
+import { BurgerMenu } from "@/common/Burger";
+import { Container } from "@/common/Container";
 
 export default function Bar() {
   return (
     <>
-      <div className="mt-12">
-        <button className="border border-gray-300 py-2 px-4 rounded-md shadow-sm bg-gray-50">
-          <Link href={"/"} className="flex justify-between">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="w-6 h-6 rotate-180"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M8.25 4.5l7.5 7.5-7.5 7.5"
-              />
-            </svg>
-            <p>На головну</p>
-          </Link>
-        </button>
+      <div>
+        <div className="flex justify-between px-4">
+          <ButtonBack>
+            <Link href="/">
+              <div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={2.5}
+                  stroke="currentColor"
+                  className="w-6 h-6 rotate-180"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                  />
+                </svg>
+              </div>
+            </Link>
+          </ButtonBack>
+          <BurgerMenu />
+        </div>
+      </div>
+      <div>
+        <p className="text-center text-2xl text-gray-500">Меню бару</p>
+        <div className="w-36 bg-gray-400 h-[1px] mx-auto "></div>
       </div>
       <CardList />
     </>

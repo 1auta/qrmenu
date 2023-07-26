@@ -1,12 +1,10 @@
+import { Container } from "@/common/Container";
 import { ButtonBack } from "@/common/ButtonBack";
 import Link from "next/link";
-import { CardListKitchen } from "@/common/CardLists/CardListKitchen";
-import { BurgerMenu } from "@/common/Burger";
 
-export default function Kitchen() {
+export default function Desert() {
   return (
     <>
-      <div className="flex justify-between px-4">
         <ButtonBack>
           <Link href="/">
             <div className="flex justify-between">
@@ -27,13 +25,11 @@ export default function Kitchen() {
             </div>
           </Link>
         </ButtonBack>
-        <BurgerMenu />
-      </div>
-      <div>
-        <p className="text-center text-2xl text-gray-500">Меню кухні</p>
-        <div className="w-36 bg-gray-400 h-[1px] mx-auto "></div>
-      </div>
-      <CardListKitchen />
+      <Container>
+        <div>
+          <p>desert</p>
+        </div>
+      </Container>
     </>
   );
 }

@@ -104,9 +104,9 @@ export const BurgerMenu: React.FC = () => {
       >
         <button className="text-4xl cursor-pointer" onClick={openNav}>
           <div className="flex flex-col gap-1.5">
-            <div className="w-9 h-1 bg-black"></div>
-            <div className="w-9 h-1 bg-black"></div>
-            <div className="w-9 h-1 bg-black"></div>
+            <div className="w-8 h-1 bg-black"></div>
+            <div className="w-8 h-1 bg-black"></div>
+            <div className="w-8 h-1 bg-black"></div>
           </div>
         </button>
       </div>

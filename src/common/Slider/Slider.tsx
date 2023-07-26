@@ -3,8 +3,8 @@ import React, { useState, useEffect, useRef } from "react";
 import { useSwipeable } from "react-swipeable";
 
 const images = [
-  "https://images.prom.ua/2190641778_2190641778.jpg?PIMAGE_ID=2190641778",
   "https://lasunka.com/s154-1.jpg",
+  "https://images.prom.ua/2190641778_2190641778.jpg?PIMAGE_ID=2190641778",
   "https://bhub.com.ua/wp-content/wpmowebp/wp-content/uploads/2021/05/z_00.webp",
   "https://posteat.ua/wp-content/uploads/2019/06/photo-1484344597163-9347ad5cb26d-1024x713.jpg",
   "https://life.liga.net/images/general/2022/12/29/20221229093409-2416.jpg",
@@ -14,7 +14,6 @@ const images = [
 export const Slider: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [totalSlides, setTotalSlides] = useState(0);
-  const [currentSlide, setCurrentSlide] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
   const [isLastSlideVisible, setIsLastSlideVisible] = useState(false);
 
@@ -35,8 +34,7 @@ export const Slider: React.FC = () => {
 
   useEffect(() => {
     setTotalSlides(images.length);
-    setCurrentSlide(currentIndex + 1);
-  }, [currentIndex]);
+  }, []);
 
   const handlers = useSwipeable({
     onSwipedLeft: () => handleSwipe("left"),
@@ -56,18 +54,6 @@ export const Slider: React.FC = () => {
     transform: `translateX(-${currentIndex * 100}%)`,
   };
 
-  const handlePrev = () => {
-    if (currentIndex > 0) {
-      setCurrentIndex(currentIndex - 1);
-    }
-  };
-
-  const handleNext = () => {
-    if (!isLastSlideVisible && currentIndex < images.length - 1) {
-      setCurrentIndex(currentIndex + 1);
-    }
-  };
-
   return (
     <div {...handlers} className="overflow-hidden">
       <div
@@ -80,31 +66,10 @@ export const Slider: React.FC = () => {
             key={index}
             src={image}
             alt={`Slide ${index + 1}`}
-            className="w-full flex-shrink-0 md:w-96"
+            className="w-full flex-shrink-0 md:w-[700px]"
             style={imageStyle}
           />
         ))}
-      </div>
-      <div className="flex absolute">
-        <div>{currentSlide}</div>
-        <p>/</p>
-        <div>{totalSlides}</div>
-      </div>
-      <div className="hidden md:flex relative mt-5 justify-around transform -translate-y-1/2">
-        <button
-          className="bg-gray-500 text-white px-3 py-2 mr-2"
-          onClick={handlePrev}
-          disabled={currentIndex === 0}
-        >
-          Prev
-        </button>
-        <button
-          className="bg-gray-500 text-white px-3 py-2"
-          onClick={handleNext}
-          disabled={isLastSlideVisible}
-        >
-          Next
-        </button>
       </div>
     </div>
   );

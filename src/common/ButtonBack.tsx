@@ -1,5 +1,5 @@
 import clsx from "clsx";
-
+import Link from "next/link";
 interface ButtonPropsType {
   children: React.ReactNode;
   type?: "button" | "submit" | "reset";
@@ -8,12 +8,12 @@ interface ButtonPropsType {
   className?: string;
 }
 
-export function Button(props: ButtonPropsType) {
+export function ButtonBack(props: ButtonPropsType) {
   const { children, additionalClasses, type = "button", onClick } = props;
   return (
     <button
       type={type}
-      className={clsx("border border-gray-300 px-6 py-3 bg-white rounded-lg w-full sm:w-3/4 md:w-3/4 lg:w-1/4  ", additionalClasses)}
+      className={clsx("px-3 py-3 bg-white shadow-xl rounded-lg  ", additionalClasses)}
       onClick={onClick}
     >
       {children}
