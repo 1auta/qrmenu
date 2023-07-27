@@ -25,30 +25,32 @@ export const CardListKitchen: React.FC = () => {
           <img
             src={card.image}
             alt={card.title}
-            className="w-44 rounded-2xl p-2 my-auto md:w-60 md:mx-auto"
+            className="w-44 h-44 rounded-2xl p-2 md:w-60 md:mx-auto md:h-60"
           />
-          <div className="flex flex-col py-2 text-start md:px-2">
-            <p className="font-bolt text-xl leading-5">{card.title}</p>
-            <p className="text-xs text-gray-400 py-3">{card.text}</p>
-            <p className="text-xl  text-orange-400">
-              {card.price}₴
-            </p>
+           <div className="flex flex-col justify-between w-full">
+            <div className="flex flex-col py-2 text-start md:px-2">
+              <p className="font-bolt text-xl leading-5">{card.title}</p>
+              <p className="text-xs text-gray-400 py-3">{card.text}</p>
+            </div>
+            <div className="px-3">
+              <p className="text-xl text-end text-[#ffc26c]">{card.price}₴</p>
+            </div>
           </div>
         </div>
       ))}
 
-      {selectedCard && (
+{selectedCard && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-60">
-          <div className="bg-white p-4 w-11/12 rounded-md">
+          <div className="bg-white p-4 w-11/12 rounded-md lg:w-1/3 ">
             <div className="flex gap-x-4">
               <img
                 src={selectedCard.image}
                 alt={selectedCard.title}
-                className="w-44 h-44 rounded-lg"
+                className="w-44 h-44 rounded-lg lg:w-60 lg:h-60"
               />
-              <div className="h-44 text-start">
+              <div className="h-44">
                 <p className="font-bold">{selectedCard.title}</p>
-                <p className="text-xs text-gray-500 py-3">{selectedCard.fulltext}</p>
+                <p className="text-m text-gray-500 py-3">{selectedCard.text}</p>
                 {/* <p className="text-xl text-orange-400 bottom-0">
                   {selectedCard.price}₴
                 </p> */}

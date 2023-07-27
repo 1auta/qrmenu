@@ -1,13 +1,12 @@
 "use client";
 
 import React, { useState } from "react";
-import { cardData } from "../Cards/CardBar";
-import { Card } from "../Cards/CardBar";
+import { Desert, desertData } from "../Cards/CardDesert";
 
-export const CardList: React.FC = () => {
-  const [selectedCard, setSelectedCard] = useState<Card | null>(null);
+export const CardListDesert: React.FC = () => {
+  const [selectedCard, setSelectedCard] = useState<Desert | null>(null);
 
-  const openModal = (card: Card) => {
+  const openModal = (card: Desert) => {
     setSelectedCard(card);
   };
 
@@ -17,16 +16,16 @@ export const CardList: React.FC = () => {
 
   return (
     <div className="flex flex-col gap-4 w-5/6 mx-auto md:flex-row md:flex-wrap md:gap-6 justify-center my-2">
-      {cardData.map((card, index) => (
+      {desertData.map((card, index) => (
         <div
           key={index}
-          className=" flex  md:flex-wrap cursor-pointer border border-gray-200 rounded-md shadow-md md:w-[250px]"
+          className="flex md:flex-wrap cursor-pointer border border-gray-200 rounded-md shadow-md md:w-[250px] md:h-[350px] "
           onClick={() => openModal(card)}
         >
           <img
             src={card.image}
             alt={card.title}
-            className="w-44 rounded-2xl p-2 my-auto md:w-60 md:mx-auto"
+            className="w-44 h-44 rounded-2xl p-2 md:w-60 md:mx-auto md:h-60"
           />
           <div className="flex flex-col justify-between w-full">
             <div className="flex flex-col py-2 text-start md:px-2">

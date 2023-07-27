@@ -1,10 +1,13 @@
-import { Container } from "@/common/Container";
 import { ButtonBack } from "@/common/ButtonBack";
 import Link from "next/link";
+import { ButtonNav } from "@/common/ButtonNav";
+import { CardListDesert } from "@/common/CardLists/CardListDesert";
+import { BurgerMenu } from "@/common/Burger";
 
 export default function Desert() {
   return (
     <>
+      <div className="flex justify-between px-4">
         <ButtonBack>
           <Link href="/">
             <div className="flex justify-between">
@@ -25,11 +28,24 @@ export default function Desert() {
             </div>
           </Link>
         </ButtonBack>
-      <Container>
-        <div>
-          <p>desert</p>
-        </div>
-      </Container>
+        <BurgerMenu />
+      </div>
+      <div>
+        <p className="text-center text-2xl text-gray-500">Меню десертів</p>
+        <div className="w-48 bg-gray-400 h-[1px] mx-auto "></div>
+      </div>
+      <div className=" flex gap-2 text-sm mt-3">
+        <ButtonNav>
+          Тістечко
+        </ButtonNav>
+        <ButtonNav>
+          Макарони
+        </ButtonNav>
+        <ButtonNav>
+          Еклери
+        </ButtonNav>
+      </div>
+      <CardListDesert />
     </>
   );
 }
