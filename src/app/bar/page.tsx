@@ -1,8 +1,13 @@
-import { CardList } from "@/common/CardLists/CardListBar";
+"use client";
+
 import { ButtonBack } from "@/common/ButtonBack";
 import Link from "next/link";
 import { BurgerMenu } from "@/common/Burger";
-import { Container } from "@/common/Container";
+import { ColdDrinksList } from "@/common/CardLists/CardListBar/ColdDrinks";
+import { TeaList } from "@/common/CardLists/CardListBar/Tea";
+import { ButtonNav } from "@/common/ButtonNav";
+import { Link as ScrollLink } from "react-scroll";
+import { ButtonUp } from "@/common/ButtonUp";
 
 export default function Bar() {
   return (
@@ -36,7 +41,44 @@ export default function Bar() {
         <p className="text-center text-2xl text-gray-500">Меню бару</p>
         <div className="w-36 bg-gray-400 h-[1px] mx-auto "></div>
       </div>
-      <CardList />
+      <div className="flex gap-2 px-2 mt-2 justify-center  sm:flex-row">
+        <ButtonNav>
+          <ScrollLink to="cold" smooth={true} duration={500}>
+            Холодні напої
+          </ScrollLink>
+        </ButtonNav>
+        <ButtonNav>
+          <ScrollLink to="tea" smooth={true} duration={500}>
+            Чаї
+          </ScrollLink>
+        </ButtonNav>
+        <ButtonNav>
+          <ScrollLink to="teaForSale" smooth={true} duration={500}>
+            На продаж
+          </ScrollLink>
+        </ButtonNav>
+      </div>
+      <div>
+        <div id="cold">
+          <p className="text-center text-2xl text-gray-500 mt-3 md:mt-7 ">
+            Холодні напої
+          </p>
+          <ColdDrinksList />
+          {/* <div className=" bg-black h-[1px] mx-auto "></div> */}
+        </div>
+        <div id="tea">
+          <p className="text-center text-2xl text-gray-500 mt-3 md:mt-7">Чаї</p>
+          <TeaList />
+          {/* <div className=" bg-black h-[1px] mx-auto "></div> */}
+        </div>
+        <div id="teaForSale">
+          <p className="text-center text-2xl text-gray-500 mt-3 md:mt-7 ">
+            Чаї на продаж
+          </p>
+          <TeaList />
+        </div>
+        <ButtonUp/>
+      </div>
     </>
   );
 }

@@ -1,12 +1,15 @@
 "use client";
 
 import React, { useState } from "react";
-import { Kitchen, kitchenData } from "../Cards/CardKitchen";
+import {
+  SweetBreakfast,
+  sweetData,
+} from "../../Cards/DataKitchen/SweetBreakfasts";
 
-export const CardListKitchen: React.FC = () => {
-  const [selectedCard, setSelectedCard] = useState<Kitchen | null>(null);
+export const SweetBreakfastList: React.FC = () => {
+  const [selectedCard, setSelectedCard] = useState<SweetBreakfast | null>(null);
 
-  const openModal = (card: Kitchen) => {
+  const openModal = (card: SweetBreakfast) => {
     setSelectedCard(card);
   };
 
@@ -15,8 +18,8 @@ export const CardListKitchen: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col gap-4 w-5/6 mx-auto md:flex-row md:flex-wrap md:gap-6 justify-center my-2">
-      {kitchenData.map((card, index) => (
+    <div className="flex flex-col gap-4 w-5/6 mx-auto md:flex-row md:flex-wrap md:gap-6 justify-center ">
+      {sweetData.map((card, index) => (
         <div
           key={index}
           className=" flex  md:flex-wrap cursor-pointer border border-gray-200 rounded-md shadow-md md:w-[250px]"
@@ -27,7 +30,7 @@ export const CardListKitchen: React.FC = () => {
             alt={card.title}
             className="w-44 h-44 rounded-2xl p-2 md:w-60 md:mx-auto md:h-60"
           />
-           <div className="flex flex-col justify-between w-full">
+          <div className="flex flex-col justify-between w-full">
             <div className="flex flex-col py-2 text-start md:px-2">
               <p className="font-bolt text-xl leading-5">{card.title}</p>
               <p className="text-xs text-gray-400 py-3">{card.text}</p>
@@ -39,7 +42,7 @@ export const CardListKitchen: React.FC = () => {
         </div>
       ))}
 
-{selectedCard && (
+      {selectedCard && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-60">
           <div className="bg-white p-4 w-11/12 rounded-md lg:w-1/3 ">
             <div className="flex gap-x-4">
@@ -48,12 +51,12 @@ export const CardListKitchen: React.FC = () => {
                 alt={selectedCard.title}
                 className="w-44 h-44 rounded-lg lg:w-60 lg:h-60"
               />
-              <div className="h-44">
-                <p className="font-bold">{selectedCard.title}</p>
-                <p className="text-m text-gray-500 py-3">{selectedCard.text}</p>
-                {/* <p className="text-xl text-orange-400 bottom-0">
-                  {selectedCard.price}₴
+              <div className="h-44 text-start">
+                <p className="md:font-bold text-xl">{selectedCard.title}</p>
+                {/* <p className="md:text-m text-gray-500 py-3 text-sm">
+                  {selectedCard.text}
                 </p> */}
+                <p className="text-sm text-gray-500">{selectedCard.fulltext}</p>
               </div>
             </div>
             <div className="flex justify-between">

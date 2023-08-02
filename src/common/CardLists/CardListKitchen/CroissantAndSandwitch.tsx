@@ -1,12 +1,12 @@
 "use client";
 
 import React, { useState } from "react";
-import { Desert, desertData } from "../Cards/CardDesert";
+import { CroissantAndSandwitch, croissantData } from "../../Cards/DataKitchen/CroissantsAndSandwiches";
 
-export const CardListDesert: React.FC = () => {
-  const [selectedCard, setSelectedCard] = useState<Desert | null>(null);
+export const CroissantAndSandwitchList: React.FC = () => {
+  const [selectedCard, setSelectedCard] = useState<CroissantAndSandwitch | null>(null);
 
-  const openModal = (card: Desert) => {
+  const openModal = (card: CroissantAndSandwitch) => {
     setSelectedCard(card);
   };
 
@@ -15,11 +15,11 @@ export const CardListDesert: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col gap-4 w-5/6 mx-auto md:flex-row md:flex-wrap md:gap-6 justify-center my-2">
-      {desertData.map((card, index) => (
+    <div className="flex flex-col gap-4 w-5/6 mx-auto md:flex-row md:flex-wrap md:gap-6 justify-center ">
+      {croissantData.map((card, index) => (
         <div
           key={index}
-          className="flex md:flex-wrap cursor-pointer border border-gray-200 rounded-md shadow-md md:w-[250px] md:h-[350px] "
+          className=" flex  md:flex-wrap cursor-pointer border border-gray-200 rounded-md shadow-md md:w-[250px]"
           onClick={() => openModal(card)}
         >
           <img
@@ -48,12 +48,10 @@ export const CardListDesert: React.FC = () => {
                 alt={selectedCard.title}
                 className="w-44 h-44 rounded-lg lg:w-60 lg:h-60"
               />
-              <div className="h-44">
-                <p className="font-bold">{selectedCard.title}</p>
-                <p className="text-m text-gray-500 py-3">{selectedCard.text}</p>
-                {/* <p className="text-xl text-orange-400 bottom-0">
-                  {selectedCard.price}₴
-                </p> */}
+              <div className="h-44 text-start">
+                <p className="md:font-bold text-xl">{selectedCard.title}</p>
+                {/* <p className="md:text-m text-gray-500 py-3 text-sm">{selectedCard.text}</p> */}
+                <p className="text-sm text-gray-500">{selectedCard.fulltext}</p>
               </div>
             </div>
             <div className="flex justify-between">

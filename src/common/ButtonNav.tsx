@@ -12,7 +12,7 @@ export function ButtonNav(props: ButtonPropsType) {
   return (
     <button
       type={type}
-      className={clsx("px-4 py-2 bg-white rounded-lg border border-gray-400 outline-none  ", additionalClasses)}
+      className={clsx("px-4 py-2 bg-white rounded-lg border border-gray-400 outline-none ", additionalClasses)}
       onClick={onClick}
     >
       {children}

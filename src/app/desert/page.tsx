@@ -1,10 +1,20 @@
+"use client";
+
 import { ButtonBack } from "@/common/ButtonBack";
 import Link from "next/link";
 import { ButtonNav } from "@/common/ButtonNav";
-import { CardListDesert } from "@/common/CardLists/CardListDesert";
 import { BurgerMenu } from "@/common/Burger";
+import { MacaronList } from "@/common/CardLists/CardListDesert/Macaron";
+import { CakeList } from "@/common/CardLists/CardListDesert/Cake";
+import { animateScroll as scroll } from "react-scroll";
+import { Link as ScrollLink } from "react-scroll";
+import { useEffect, useState } from "react";
+import { ButtonUp } from "@/common/ButtonUp";
+
+
 
 export default function Desert() {
+
   return (
     <>
       <div className="flex justify-between px-4">
@@ -34,18 +44,38 @@ export default function Desert() {
         <p className="text-center text-2xl text-gray-500">Меню десертів</p>
         <div className="w-48 bg-gray-400 h-[1px] mx-auto "></div>
       </div>
-      <div className=" flex gap-2 text-sm mt-3">
+      <div className="flex gap-2 px-2 mt-2 justify-center  sm:flex-row">
         <ButtonNav>
-          Тістечко
+          <ScrollLink to="cake" smooth={true} duration={500}>
+            Тістечка
+          </ScrollLink>
         </ButtonNav>
         <ButtonNav>
-          Макарони
+          <ScrollLink to="macaroon" smooth={true} duration={500}>
+            Макарони
+          </ScrollLink>
         </ButtonNav>
         <ButtonNav>
-          Еклери
+          <ScrollLink to="ecler" smooth={true} duration={500}>
+            Еклери
+          </ScrollLink>
         </ButtonNav>
       </div>
-      <CardListDesert />
+      <div>
+        <div id="cake" >
+          <p className="text-center text-2xl text-gray-500 mt-3">Тістечко</p>
+          <CakeList />
+        </div>
+        <div id="macaroon" >
+          <p className="text-center text-2xl text-gray-500 mt-3">Макарони</p>
+          <MacaronList />
+        </div>
+        <div id="ecler" >
+          <p className="text-center text-2xl text-gray-500 mt-3">Еклери</p>
+          <CakeList />
+        </div>
+      </div>
+      <ButtonUp/>
     </>
   );
 }

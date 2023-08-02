@@ -1,13 +1,15 @@
 "use client";
 
 import React, { useState } from "react";
-import { cardData } from "../Cards/CardBar";
-import { Card } from "../Cards/CardBar";
+import {
+  SaltyBreakfast,
+  saltyData,
+} from "../../Cards/DataKitchen/SaltyBreakfasts";
 
-export const CardList: React.FC = () => {
-  const [selectedCard, setSelectedCard] = useState<Card | null>(null);
+export const SaltyBreakfastList: React.FC = () => {
+  const [selectedCard, setSelectedCard] = useState<SaltyBreakfast | null>(null);
 
-  const openModal = (card: Card) => {
+  const openModal = (card: SaltyBreakfast) => {
     setSelectedCard(card);
   };
 
@@ -16,8 +18,8 @@ export const CardList: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col gap-4 w-5/6 mx-auto md:flex-row md:flex-wrap md:gap-6 justify-center my-2">
-      {cardData.map((card, index) => (
+    <div className="flex flex-col gap-4 w-5/6 mx-auto md:flex-row md:flex-wrap md:gap-6 justify-center ">
+      {saltyData.map((card, index) => (
         <div
           key={index}
           className=" flex  md:flex-wrap cursor-pointer border border-gray-200 rounded-md shadow-md md:w-[250px]"
@@ -26,7 +28,7 @@ export const CardList: React.FC = () => {
           <img
             src={card.image}
             alt={card.title}
-            className="w-44 rounded-2xl p-2 my-auto md:w-60 md:mx-auto"
+            className="w-44 h-44 rounded-2xl p-2 md:w-60 md:mx-auto md:h-60"
           />
           <div className="flex flex-col justify-between w-full">
             <div className="flex flex-col py-2 text-start md:px-2">
@@ -49,12 +51,12 @@ export const CardList: React.FC = () => {
                 alt={selectedCard.title}
                 className="w-44 h-44 rounded-lg lg:w-60 lg:h-60"
               />
-              <div className="h-44">
-                <p className="font-bold">{selectedCard.title}</p>
-                <p className="text-m text-gray-500 py-3">{selectedCard.text}</p>
-                {/* <p className="text-xl text-orange-400 bottom-0">
-                  {selectedCard.price}₴
+              <div className="h-44 text-start">
+                <p className="md:font-bold text-xl">{selectedCard.title}</p>
+                {/* <p className="md:text-m text-gray-500 py-3 text-sm">
+                  {selectedCard.text}
                 </p> */}
+                <p className="text-sm text-gray-500">{selectedCard.fulltext}</p>
               </div>
             </div>
             <div className="flex justify-between">
